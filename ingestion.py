@@ -6,11 +6,12 @@ from langchain.text_splitter import RecursiveCharacterTextSplitter
 from langchain.vectorstores import Pinecone
 import pinecone
 
+from consts import INDEX_NAME
+
 pinecone.init(
     api_key=os.environ["PINECONE_API_KEY"],
     environment=os.environ["PINECONE_ENVIRONMENT_REGION"],
 )
-INDEX_NAME = "langchain-doc-index"
 
 
 def ingest_docs():
